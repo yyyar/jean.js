@@ -1,0 +1,41 @@
+{
+  "name": "jean",
+  "description": "Small IoC library for Node.js inspired by Spring Framework IoC",
+  "version": "0.0.1",
+  "author": {
+    "name": "Yaroslav Pogrebnyak",
+    "url": "http://pogrebnyak.info",
+    "email": "yyyaroslav@gmail.com"
+  },
+  "homepage": "http://github.com/yyyar/jean",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yyyar/jean.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yyyar/jean/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">= 0.10.12"
+  },
+  "keywords": [
+    "ioc",
+    "depencendy",
+    "injection",
+    "context",
+    "dependency injection",
+    "container",
+    "beans",
+    "di"
+  ],
+  "main": "./lib/bean",
+  "scripts": {
+    "test": "nodeunit tests --reporter verbose"
+  },
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "recursive-readdir": "^1.1.1"
+  }
+}
