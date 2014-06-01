@@ -7,13 +7,13 @@
     "url": "http://pogrebnyak.info",
     "email": "yyyaroslav@gmail.com"
   },
-  "homepage": "http://github.com/yyyar/jean",
+  "homepage": "http://github.com/yyyar/jean.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:yyyar/jean.git"
+    "url": "git@github.com:yyyar/jean.js.git"
   },
   "bugs": {
-    "url": "https://github.com/yyyar/jean/issues"
+    "url": "https://github.com/yyyar/jean.js/issues"
   },
   "license": "MIT",
   "engines": {
