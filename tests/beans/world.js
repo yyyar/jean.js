@@ -15,6 +15,9 @@ var World = module.exports = function() {
     };
 };
 
+/** ----- Jean properties ----- **/
+
 World.$bean = 'world';
+
 World.$autowired = ['hello'];
 
