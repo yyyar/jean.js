@@ -8,6 +8,11 @@ jean is small IoC library for Node.js inspired by Spring Framework IoC container
 jean is under development! It's not either stable not working as expected!
 Get back in a few weeks for update! :)
 
+#### Installation
+```bash
+$ npm install jean
+```
+
 #### Usage
 Create some beans
 
@@ -51,6 +56,12 @@ app.scan(__dirname, function() {
     app.getBean('myBean2').doWork();
 
 });
+```
+
+#### Tests
+```bash
+$ sudo npm install nodeunit -g
+$ npm test
 ```
 
 #### Author
