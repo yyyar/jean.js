@@ -1,4 +1,6 @@
-### jean
+## jean.js
+
+[![Build Status](https://travis-ci.org/yyyar/jean.js.svg?branch=master)](https://travis-ci.org/yyyar/jean.js) [![NPM version](https://badge.fury.io/js/jean.js.svg)](http://badge.fury.io/js/jean.js)
 
 jean is small IoC library for Node.js inspired by Spring Framework IoC container
 
@@ -19,7 +21,7 @@ var MyBean1 = module.exports = function() {
 };
 
 MyBean1.$bean = 'myBean1';
-MyBean1.$autowired = ['myBean2'];
+MyBean1.$autowired = [];
 ```
 
 myBean2.js
@@ -38,6 +40,7 @@ MyBean2.$autowired = ['myBean1'];
 ```
 
 Initializa Context, scan for beans and run.
+
 app.js
 ```javascript
 var JeanContext = require('jean');
