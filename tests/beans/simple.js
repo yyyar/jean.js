@@ -18,6 +18,11 @@ Simple.prototype = {
     hello: null,
 
     /**
+     * @Autowired
+     */
+    context: null,
+
+    /**
      * @Initialize
      */
     init: function(callback) {
@@ -34,6 +39,7 @@ Simple.prototype = {
 
     doWork: function() {
         console.log('[simple] doWork ' + this.hello.hello());
+        console.log('[simple] doWork accessContext: ' + this.context.name);
     }
 };
 
