@@ -1,7 +1,7 @@
 {
   "name": "jean",
   "description": "Small IoC library for Node.js inspired by Spring Framework IoC",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": {
     "name": "Yaroslav Pogrebnyak",
     "url": "http://pogrebnyak.info",

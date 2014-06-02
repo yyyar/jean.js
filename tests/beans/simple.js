@@ -25,6 +25,13 @@ Simple.prototype = {
         return callback();
     },
 
+    /**
+     * @AfterPropertiesSet
+     */
+    ready: function() {
+        console.log('[simple] afterPropertiesSet');
+    },
+
     doWork: function() {
         console.log('[simple] doWork ' + this.hello.hello());
     }
