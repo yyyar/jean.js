@@ -2,22 +2,32 @@
  * world.js - bean
  */
 
-var World = module.exports = function() {
+/**
+ * @Bean('world')
+ */
+var World = module.exports = function() {};
 
-    var self = this;
+World.prototype = {
 
-    this.world = function() {
+    /**
+     * @Autowired
+     */
+    hello: null,
+
+    /**
+     * @Initialize
+     */
+    init: function(callback) {
+        console.log('[world] initialize');
+        callback();
+    },
+
+    world: function() {
         return 'world';
-    };
+    },
 
-    this.greeting = function() {
-        return self.$hello.hello();
-    };
+    greeting: function() {
+        return this.hello.hello();
+    }
 };
-
-/** ----- Jean properties ----- **/
-
-World.$bean = 'world';
-
-World.$autowired = ['hello'];
 

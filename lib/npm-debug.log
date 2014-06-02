@@ -1,0 +1,18 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'test' ]
+2 info using npm@1.4.6
+3 info using node@v0.10.12
+4 verbose node symlink /usr/bin/node
+5 error Error: ENOENT, open '/home/yyyar/workspace/jean.js/lib/package.json'
+6 error If you need help, you may report this *entire* log,
+6 error including the npm and node versions, at:
+6 error     <http://github.com/npm/npm/issues>
+7 error System Linux 3.8.0-35-generic
+8 error command "node" "/usr/bin/npm" "test"
+9 error cwd /home/yyyar/workspace/jean.js/lib
+10 error node -v v0.10.12
+11 error npm -v 1.4.6
+12 error path /home/yyyar/workspace/jean.js/lib/package.json
+13 error code ENOENT
+14 error errno 34
+15 verbose exit [ 34, true ]
