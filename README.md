@@ -1,6 +1,6 @@
 ## jean.js
 
-[![Build Status](https://travis-ci.org/yyyar/jean.js.svg?branch=master)](https://travis-ci.org/yyyar/jean.js) [![NPM version](https://badge.fury.io/js/jean.js.svg)](http://badge.fury.io/js/jean)
+[![Build Status](https://travis-ci.org/yyyar/jean.js.svg?branch=master)](https://travis-ci.org/yyyar/jean.js) [![NPM version](https://badge.fury.io/js/jean.svg)](http://badge.fury.io/js/jean)
 
 jean is small IoC library for Node.js inspired by Spring Framework IoC container
 
