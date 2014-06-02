@@ -18,33 +18,39 @@ Create some beans
 
 myBean1.js
 ```javascript
+/**
+ * @Bean('myBean1')
+ */
+var MyBean1 = module.exports = function() {}
 
-var MyBean1 = module.exports = function() {
-    this.print = function() {
+MyBean1.prototype = {
+    print: function() {
         console.log('hello world');
-    };
+    }
 };
-
-MyBean1.$bean = 'myBean1';
-MyBean1.$autowired = [];
 ```
 
 myBean2.js
 ```javascript
+/**
+ * @Bean('myBean2')
+ */
+var MyBean2 = module.exports = function() {}
 
-var MyBean2 = module.exports = function() {
-    var self = this;
+MyBean2.prototype = {
 
-    this.doWork = function() {
-        self.$myBean1.print();
+    /**
+     * @Autowired
+     */
+    myBean1: null,
+
+    doWork: function() {
+        this.myBean1.print();
     };
 };
-
-MyBean2.$bean = 'myBean2';
-MyBean2.$autowired = ['myBean1'];
 ```
 
-Initializa Context, scan for beans and run.
+Initialize Context, scan for beans and run.
 
 app.js
 ```javascript
