@@ -21,7 +21,7 @@ myBean1.js
 /**
  * @Bean('myBean1')
  */
-var MyBean1 = module.exports = function() {}
+var MyBean1 = module.exports = function() {};
 
 MyBean1.prototype = {
     print: function() {
@@ -35,7 +35,7 @@ myBean2.js
 /**
  * @Bean('myBean2')
  */
-var MyBean2 = module.exports = function() {}
+var MyBean2 = module.exports = function() {};
 
 MyBean2.prototype = {
 
@@ -46,7 +46,7 @@ MyBean2.prototype = {
 
     doWork: function() {
         this.myBean1.print();
-    };
+    }
 };
 ```
 
