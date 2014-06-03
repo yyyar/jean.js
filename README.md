@@ -64,6 +64,81 @@ app.scan(__dirname, function() {
 });
 ```
 
+### Annotations
+This section describe currently implemented annotations
+
+#### @Bean('name')
+This annotation marks your constructor as a "bean", it will be
+automatically scanner and put into context. Please note that
+you should keep only one bean per file and module.exports should
+export the constructor of your bean.
+
+```javascript
+/**
+ * @Bean('myBean')
+ */
+var MyBean = module.exports = function() {};
+
+MyBean.prototype = {
+    // implementation
+};
+```
+
+#### @Initialize
+If you mark any your prototype method definition with this method,
+method would be invoked right after creating new instance of your bean
+and putting it in the context, but *before* any autowired injections.
+Async initializations are supported, your method will be passed with a callback,
+and you need to invoke it after you complete initialization.
+
+```javascript
+/**
+ * @Bean('myBean')
+ */
+var MyBean = module.exports = function() {};
+
+MyBean.prototype = {
+
+    /**
+     * @Initialize
+     */
+    doInit: function(callback) {
+
+        // emulating long initialization...
+        setTimeout(function() {
+            callback();
+        }, 1000);
+    }
+
+};
+```
+
+#### @Autowired
+If you mark your prototype property with this annotation, the dependency 
+will be automatically injected in this property. Injected bean name should be
+the same as your property name, othwerise you can set injected bean name by
+providing parameter to annotation, for example: @Autowired('myRealBeanName').
+
+```javascript
+/**
+ * @Bean('myBean')
+ */
+var MyBean = module.exports = function() {};
+
+MyBean.prototype = {
+
+    /**
+     * @Autowired('anotherBean')
+     */
+    anotherBean: null,
+
+    doWork: function() {
+        this.anotherBean.doWork();
+    }
+
+};
+```
+
 #### Tests
 ```bash
 $ sudo npm install nodeunit -g
