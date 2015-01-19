@@ -18,10 +18,15 @@ module.exports = {
         });
     },
 
+
     'Circular DI' : function(test) {
         this.appContext.getBean('simple').doWork();
         test.equal(this.appContext.getBean('world').greeting(), 'hello world', 'Greeting!');
-        test.done();
+
+        // Shutdown context, calling all destroy handlers for each bean
+        this.appContext.shutdown(function() {
+            test.done();
+        });
     }
 
 };

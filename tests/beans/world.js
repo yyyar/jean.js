@@ -22,6 +22,14 @@ World.prototype = {
         callback();
     },
 
+    /**
+     * @Destroy
+     */
+    destroy: function(callback) {
+        console.log("[world] destroy");
+        callback();
+    },
+
     world: function() {
         return 'world';
     },

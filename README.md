@@ -61,6 +61,12 @@ app.scan(__dirname, function() {
     app.getBean('myBean2').doWork();
 
 });
+
+// Call it when you want to shutdown context and all beans (see @Destroy annotation)
+app.shutdown(function() {
+    console.log("Shutdown done");
+});
+
 ```
 
 ### Annotations
@@ -104,6 +110,33 @@ MyBean.prototype = {
     doInit: function(callback) {
 
         // emulating long initialization...
+        setTimeout(function() {
+            callback();
+        }, 1000);
+    }
+
+};
+```
+
+#### `@Destroy`
+If you mark any your prototype method definition with this annotation,
+method would be invoked on context shutdown, i.e. when calling `jeanContext.shutdown()`.
+Please note that beans in context would be destored in random order in parallel, so not make any assumptions on it.
+
+```javascript
+/**
+ * @Bean('myBean')
+ */
+var MyBean = module.exports = function() {};
+
+MyBean.prototype = {
+
+    /**
+     * @Destroy
+     */
+    destroy: function(callback) {
+
+        // emulating long destroying
         setTimeout(function() {
             callback();
         }, 1000);

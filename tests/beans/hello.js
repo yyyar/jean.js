@@ -28,6 +28,14 @@ Hello.prototype = {
         });
     },
 
+    /**
+     * @Destroy
+     */
+    destroy: function(callback) {
+        console.log("[hello] destroy");
+        callback();
+    },
+
     hello: function() {
         return this.helloMsg + ' ' + this.world.world();
     }
