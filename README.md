@@ -4,8 +4,6 @@
 
 **jean.js** is small IoC library for Node.js inspired by Spring Framework IoC container
 
-#### Caution!
-jean.js is under development! Things may fail or work inconsistently. Feel free to make any suggestions and/or report bugs.
 
 #### Installation
 ```bash
@@ -56,17 +54,22 @@ Initialize Context, scan for beans and run.
 var JeanContext = require('jean');
 
 var app = new JeanContext('myapp');
-app.scan(__dirname, function() {
+app.scan(__dirname, function(err) {
 
+    // handle init error
+    if (err) {
+        console.log(err, err.stack);
+    }
+
+    // work with beans
     app.getBean('myBean2').doWork();
 
-});
+    // Call it when you want to shutdown context and all beans (see @Destroy annotation)
+    app.shutdown(function(err) {
+        console.log("Shutdown done");
+    });
 
-// Call it when you want to shutdown context and all beans (see @Destroy annotation)
-app.shutdown(function() {
-    console.log("Shutdown done");
 });
-
 ```
 
 ### Annotations
